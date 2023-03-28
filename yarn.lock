@@ -5923,10 +5923,9 @@ react-native-gradle-plugin@^0.71.14:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.16.tgz#822bb0c680e03b5df5aa65f2e5ffc2bc2930854a"
   integrity sha512-H2BjG2zk7B7Wii9sXvd9qhCVRQYDAHSWdMw9tscmZBqSP62DkIWEQSk4/B2GhQ4aK9ydVXgtqR6tBeg3yy8TSA==
 
-react-native-keyboard-controller@^1.4.4:
+"react-native-keyboard-controller@https://github.com/kirillzyusko/react-native-keyboard-controller.git#refs/heads/fix/invalidate-callbacks-when-view-is-detached":
   version "1.4.4"
-  resolved "https://registry.yarnpkg.com/react-native-keyboard-controller/-/react-native-keyboard-controller-1.4.4.tgz#09a6f89a9731eab241c9ed1c349e9022e7d16240"
-  integrity sha512-6gkdgE7ua23crqBfs8CZTAd+UbxMLqwjLCq2DZQaYuts9xs75nXKj+aUVAWHVVDxrZS8SCiuwC1XcI9munDHQw==
+  resolved "https://github.com/kirillzyusko/react-native-keyboard-controller.git#d346c3a3484fc9b35ad9d40566ea2f069adc9223"
 
 react-native-navigation@^7.32.1:
   version "7.32.1"

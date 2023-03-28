@@ -25,6 +25,7 @@ export const SecondScreen = ({componentId}) => {
 
   return (
     <ScrollView
+      keyboardShouldPersistTaps="handled"
       style={{
         backgroundColor: 'tomato',
       }}

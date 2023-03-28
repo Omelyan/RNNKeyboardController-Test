@@ -20,7 +20,7 @@ Navigation.registerComponent(
   'First screen',
   () => props => {
     return (
-      <KeyboardProvider>
+      <KeyboardProvider statusBarTranslucent navigationBarTranslucent>
         <FirstScreen {...props} />
       </KeyboardProvider>
     );
@@ -32,7 +32,7 @@ Navigation.registerComponent(
   'Second screen',
   () => props => {
     return (
-      <KeyboardProvider>
+      <KeyboardProvider statusBarTranslucent navigationBarTranslucent>
         <SecondScreen {...props} />
       </KeyboardProvider>
     );

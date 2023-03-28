@@ -25,6 +25,7 @@ export const FirstScreen = ({componentId}) => {
 
   return (
     <ScrollView
+      keyboardShouldPersistTaps="handled"
       style={{
         backgroundColor: 'blue',
       }}
