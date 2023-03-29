@@ -1,27 +1,16 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {ScrollView, TextInput, TouchableOpacity, View} from 'react-native';
-import {useKeyboardHandler} from 'react-native-keyboard-controller';
-import {Navigation} from 'react-native-navigation';
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withTiming,
-} from 'react-native-reanimated';
+import {Navigation, NavigationFunctionComponent} from 'react-native-navigation';
+import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
+import {Overlay} from './Overlay';
 
-export const FirstScreen = ({componentId}) => {
-  const y = useSharedValue(0);
+export const FirstScreen: NavigationFunctionComponent = ({componentId}) => {
+  const progress = Overlay.getSharedProgress();
 
   const style = useAnimatedStyle(() => ({
-    height: withTiming(y.value),
+    height: withTiming(40 * progress.value),
   }));
-
-  useKeyboardHandler({
-    onStart(e) {
-      'worklet';
-      y.value = 40 * e.progress;
-    },
-  });
 
   return (
     <ScrollView
@@ -32,7 +21,7 @@ export const FirstScreen = ({componentId}) => {
       contentContainerStyle={{
         flexGrow: 1,
         paddingHorizontal: 20,
-        paddingVertical: 30,
+        paddingVertical: 80,
       }}>
       <View
         style={{

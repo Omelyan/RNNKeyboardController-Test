@@ -1,0 +1,14 @@
+diff --git a/node_modules/react-native-navigation/lib/android/app/src/main/java/com/reactnativenavigation/utils/MotionEvent.kt b/node_modules/react-native-navigation/lib/android/app/src/main/java/com/reactnativenavigation/utils/MotionEvent.kt
+index a79e487..fde9bbe 100644
+--- a/node_modules/react-native-navigation/lib/android/app/src/main/java/com/reactnativenavigation/utils/MotionEvent.kt
++++ b/node_modules/react-native-navigation/lib/android/app/src/main/java/com/reactnativenavigation/utils/MotionEvent.kt
+@@ -7,7 +7,5 @@ import android.view.View
+ val hitRect = Rect()
+ 
+ fun MotionEvent.coordinatesInsideView(view: View?): Boolean {
+-    view ?: return false
+-    view.getHitRect(hitRect)
+-    return hitRect.contains(x.toInt(), y.toInt())
++    return false
+ }
+\ No newline at end of file
