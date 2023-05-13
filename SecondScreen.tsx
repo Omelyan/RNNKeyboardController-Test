@@ -1,12 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {ScrollView, TextInput, TouchableOpacity, View} from 'react-native';
+import {useReanimatedKeyboardAnimation} from 'react-native-keyboard-controller';
 import {Navigation, NavigationFunctionComponent} from 'react-native-navigation';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
-import {Overlay} from './Overlay';
 
 export const SecondScreen: NavigationFunctionComponent = ({componentId}) => {
-  const progress = Overlay.getSharedProgress();
+  const {progress} = useReanimatedKeyboardAnimation();
 
   const style = useAnimatedStyle(() => ({
     height: withTiming(40 * progress.value),
@@ -20,8 +20,8 @@ export const SecondScreen: NavigationFunctionComponent = ({componentId}) => {
       }}
       contentContainerStyle={{
         flexGrow: 1,
-        paddingHorizontal: 20,
-        paddingVertical: 80,
+        padding: 20,
+        paddingTop: 80,
       }}>
       <View
         style={{
@@ -51,7 +51,7 @@ export const SecondScreen: NavigationFunctionComponent = ({componentId}) => {
         <TextInput
           style={{
             height: 40,
-            marginBottom: 20,
+            marginBottom: 10,
             backgroundColor: 'white',
           }}
         />

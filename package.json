@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.71.2",
-    "react-native-keyboard-controller": "https://github.com/kirillzyusko/react-native-keyboard-controller.git#refs/heads/fix/invalidate-callbacks-when-view-is-detached",
+    "react-native-keyboard-controller": "https://github.com/kirillzyusko/react-native-keyboard-controller.git#refs/heads/fix/130-native-navigation",
     "react-native-navigation": "^7.32.1",
     "react-native-reanimated": "3.0.0-rc.10"
   },

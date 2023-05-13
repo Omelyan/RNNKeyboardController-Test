@@ -4,12 +4,23 @@ import {Navigation} from 'react-native-navigation';
 
 import {FirstScreen} from './FirstScreen';
 import {SecondScreen} from './SecondScreen';
-import {Overlay} from './Overlay';
 
 Navigation.setDefaultOptions({
+  statusBar: {
+    drawBehind: true,
+    translucent: true,
+    style: 'light',
+    backgroundColor: '#0004',
+  },
+
   topBar: {
     visible: false,
   },
+
+  navigationBar: {
+    backgroundColor: 'transparent',
+  },
+
   animations: {
     push: {
       waitForRender: true,
@@ -17,23 +28,29 @@ Navigation.setDefaultOptions({
   },
 });
 
-Navigation.registerComponent('First screen', () => FirstScreen);
-Navigation.registerComponent('Second screen', () => SecondScreen);
+Navigation.registerComponent(
+  'First screen',
+  () => props =>
+    (
+      <KeyboardProvider statusBarTranslucent navigationBarTranslucent>
+        <FirstScreen {...props} />
+      </KeyboardProvider>
+    ),
+  () => FirstScreen,
+);
 
 Navigation.registerComponent(
-  'Overlay',
-  () => props => {
-    return (
+  'Second screen',
+  () => props =>
+    (
       <KeyboardProvider statusBarTranslucent navigationBarTranslucent>
-        <Overlay {...props} />
+        <SecondScreen {...props} />
       </KeyboardProvider>
-    );
-  },
-  () => Overlay,
+    ),
+  () => SecondScreen,
 );
 
 Navigation.events().registerAppLaunchedListener(async () => {
-  await Navigation.showOverlay({component: {name: 'Overlay'}});
   Navigation.setRoot({
     root: {
       stack: {
